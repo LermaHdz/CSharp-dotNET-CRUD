@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d2b89c2f03bd4c05abb0139876a788b3" Name="Diagram1">
+        <EntityTypeShape EntityType="TiendaModel.Asentamiento" Width="1.5" PointX="5.25" PointY="59" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Contrato" Width="1.5" PointX="12.75" PointY="43.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Empleado" Width="1.5" PointX="10.5" PointY="41" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.EmpleadoTurno" Width="1.5" PointX="12.75" PointY="57.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Estado" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.EstadoCivil" Width="1.5" PointX="3" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Estante" Width="1.5" PointX="3" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Estudios" Width="1.5" PointX="3" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Etiqueta" Width="1.5" PointX="3" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Marca" Width="1.5" PointX="3" PointY="39.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.MetodoDePago" Width="1.5" PointX="3" PointY="43.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Municipio" Width="1.5" PointX="5.25" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Nacionalidad" Width="1.5" PointX="3" PointY="47.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Producto" Width="1.5" PointX="5.25" PointY="46.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.ProductoEtiqueta" Width="1.5" PointX="7.5" PointY="42.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Proveedor" Width="1.5" PointX="5.25" PointY="54.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Puesto" Width="1.5" PointX="3" PointY="55" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Referencia" Width="1.5" PointX="3" PointY="58.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Servicio" Width="1.5" PointX="8.25" PointY="50.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.TipoDeAsentamiento" Width="1.5" PointX="3" PointY="62.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.TipoDeProducto" Width="1.5" PointX="3" PointY="66.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.TipoDeProveedor" Width="1.5" PointX="3" PointY="70.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.TipoDeTransaccion" Width="1.5" PointX="3" PointY="73.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Transaccion" Width="1.5" PointX="15.75" PointY="52.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Turno" Width="1.5" PointX="3" PointY="77.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Usuario" Width="1.5" PointX="0.75" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Zona" Width="1.5" PointX="3" PointY="81.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Antiguedad_Empleados" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Ingreso_Empleados" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Productos_con_precio_encima_del_promedio" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Productos_mas_barato" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaModel.Productos_mas_caro" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="TiendaModel.FKAsentamientoMunicipio" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKAsentamientoTipoDeAsentamiento" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKAsentamientoUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKAsentamientoUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKAsentamientoZona" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEmpleadoAsentamiento" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKContratoEmpleado" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKContratoUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKContratoUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEmpleadoEstadoCivil" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEmpleadoEstudios" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEmpleadoNacionalidad" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEmpleadoPuesto" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEmpleadoTurnoEmpleado" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEmpleadoUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEmpleadoUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTransaccionEmpleado" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEmpleadoTurnoTurno" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEmpleadoTurnoUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEmpleadoTurnoUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEstadoUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEstadoUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKMunicipioEstado" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEstadoCivilUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEstadoCivilUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEstanteUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEstanteUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKProductoEstante" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEstudiosUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEstudiosUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEtiquetaUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKEtiquetaUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKProductoEtiquetaEtiqueta" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKMarcaUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKMarcaUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKProductoMarca" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKMetodoDePagoUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKMetodoDePagoUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTransaccionMetodoDePago" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKMunicipioUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKMunicipioUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKNacionalidadUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKNacionalidadUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKProductoEtiquetaProducto" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKProductoProveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKProductoTipoDeProducto" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKProductoUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKProductoUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTransaccionProducto" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKProductoEtiquetaUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKProductoEtiquetaUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKProveedorTipoDeProveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKProveedorUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKProveedorUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKPuestoUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKPuestoUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKReferenciaUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKReferenciaUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKServicioReferencia" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKServicioUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTransaccionServicio" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.ServicioUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTipoDeAsentamientoUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTipoDeAsentamientoUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTipoDeProductoUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTipoDeProductoUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTipoDeProveedorUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTipoDeProveedorUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTipoDeTransaccionUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTipoDeTransaccionUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTransaccionTipoDeTransaccion" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTransaccionUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTransaccionUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTurnoUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKTurnoUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKUsuarioUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKUsuarioUsuarioModifica" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKZonaUsuarioCrea" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaModel.FKZonaUsuarioModifica" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

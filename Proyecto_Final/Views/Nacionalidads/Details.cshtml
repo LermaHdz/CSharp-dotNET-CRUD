@@ -1,0 +1,66 @@
+﻿@model Proyecto_Final.Models.Nacionalidad
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Nacionalidad</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaCrea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaCrea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaModifica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaModifica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.nombreUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario1.nombreUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario1.nombreUsuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idNacionalidad }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

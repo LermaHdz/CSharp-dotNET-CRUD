@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Proyecto_Final.Models.Producto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaCrea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaModifica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estante.idEstante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marca.marca1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Proveedor.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoDeProducto.tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario1.nombreUsuario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaCrea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaModifica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estante.idEstante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marca.marca1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Proveedor.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoDeProducto.tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario.nombreUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario1.nombreUsuario)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idProducto }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idProducto }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idProducto })
+        </td>
+    </tr>
+}
+
+</table>

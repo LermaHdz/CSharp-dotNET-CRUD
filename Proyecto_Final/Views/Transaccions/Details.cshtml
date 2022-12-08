@@ -1,0 +1,114 @@
+﻿@model Proyecto_Final.Models.Transaccion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Transaccion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.monto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.monto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numeroReferencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numeroReferencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaCrea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaCrea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaModifica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaModifica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.apellidoPaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.apellidoPaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetodoDePago.metodo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetodoDePago.metodo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producto.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servicio.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servicio.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDeTransaccion.tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDeTransaccion.tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.nombreUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario1.nombreUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario1.nombreUsuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idTransaccion }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

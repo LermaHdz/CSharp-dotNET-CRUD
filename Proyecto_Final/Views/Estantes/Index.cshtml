@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Proyecto_Final.Models.Estante>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.columna)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fila)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaCrea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaModifica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario1.nombreUsuario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.columna)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fila)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaCrea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaModifica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario.nombreUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario1.nombreUsuario)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idEstante }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idEstante }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idEstante })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,1844 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TiendaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Asentamiento">
+    <Key>
+      <PropertyRef Name="idAsentamiento" />
+    </Key>
+    <Property Name="idAsentamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="codigoPostal" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idTipoDeAsentamiento" Type="int" Nullable="false" />
+    <Property Name="idMunicipio" Type="int" Nullable="false" />
+    <Property Name="idZona" Type="int" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Contrato">
+    <Key>
+      <PropertyRef Name="idContrato" />
+    </Key>
+    <Property Name="idContrato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="fechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="fechaTermino" Type="datetime" Nullable="false" />
+    <Property Name="idEmpleado" Type="int" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="idEmpleado" />
+    </Key>
+    <Property Name="idEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="apellidoPaterno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellidoMaterno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RFC" Type="char" MaxLength="13" Nullable="false" />
+    <Property Name="telefono" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="idAsentamiento" Type="int" />
+    <Property Name="idEstadoCivil" Type="int" Nullable="false" />
+    <Property Name="idEstudios" Type="int" Nullable="false" />
+    <Property Name="idPuesto" Type="int" Nullable="false" />
+    <Property Name="idNacionalidad" Type="int" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EmpleadoTurno">
+    <Key>
+      <PropertyRef Name="idEmpleadoTurno" />
+    </Key>
+    <Property Name="idEmpleadoTurno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEmpleado" Type="int" Nullable="false" />
+    <Property Name="idTurno" Type="int" Nullable="false" />
+    <Property Name="fechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="fechaFinal" Type="datetime" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="idEstado" />
+    </Key>
+    <Property Name="idEstado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EstadoCivil">
+    <Key>
+      <PropertyRef Name="idEstadoCivil" />
+    </Key>
+    <Property Name="idEstadoCivil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Estante">
+    <Key>
+      <PropertyRef Name="idEstante" />
+    </Key>
+    <Property Name="idEstante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="numero" Type="int" Nullable="false" />
+    <Property Name="columna" Type="int" Nullable="false" />
+    <Property Name="fila" Type="int" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Estudios">
+    <Key>
+      <PropertyRef Name="idEstudios" />
+    </Key>
+    <Property Name="idEstudios" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Etiqueta">
+    <Key>
+      <PropertyRef Name="idEtiqueta" />
+    </Key>
+    <Property Name="idEtiqueta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Marca">
+    <Key>
+      <PropertyRef Name="idMarca" />
+    </Key>
+    <Property Name="idMarca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="marca" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MetodoDePago">
+    <Key>
+      <PropertyRef Name="idMetodoDePago" />
+    </Key>
+    <Property Name="idMetodoDePago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="metodo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Municipio">
+    <Key>
+      <PropertyRef Name="idMunicipio" />
+    </Key>
+    <Property Name="idMunicipio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idEstado" Type="int" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Nacionalidad">
+    <Key>
+      <PropertyRef Name="idNacionalidad" />
+    </Key>
+    <Property Name="idNacionalidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="idProducto" />
+    </Key>
+    <Property Name="idProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+    <Property Name="precio" Type="int" Nullable="false" />
+    <Property Name="idMarca" Type="int" Nullable="false" />
+    <Property Name="idProveedor" Type="int" Nullable="false" />
+    <Property Name="idEstante" Type="int" Nullable="false" />
+    <Property Name="idTipoDeProducto" Type="int" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductoEtiqueta">
+    <Key>
+      <PropertyRef Name="idProductoEtiqueta" />
+    </Key>
+    <Property Name="idProductoEtiqueta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idProducto" Type="int" Nullable="false" />
+    <Property Name="idEtiqueta" Type="int" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="idProveedor" />
+    </Key>
+    <Property Name="idProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idTipoDeProveedor" Type="int" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Puesto">
+    <Key>
+      <PropertyRef Name="idPuesto" />
+    </Key>
+    <Property Name="idPuesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="salario" Type="int" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Referencia">
+    <Key>
+      <PropertyRef Name="idReferencia" />
+    </Key>
+    <Property Name="idReferencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Servicio">
+    <Key>
+      <PropertyRef Name="idServicio" />
+    </Key>
+    <Property Name="idServicio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idReferencia" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="comision" Type="int" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TipoDeAsentamiento">
+    <Key>
+      <PropertyRef Name="idTipoDeAsentamiento" />
+    </Key>
+    <Property Name="idTipoDeAsentamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TipoDeProducto">
+    <Key>
+      <PropertyRef Name="idTipoDeProducto" />
+    </Key>
+    <Property Name="idTipoDeProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TipoDeProveedor">
+    <Key>
+      <PropertyRef Name="idTipoDeProveedor" />
+    </Key>
+    <Property Name="idTipoDeProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TipoDeTransaccion">
+    <Key>
+      <PropertyRef Name="idTipoDeTransaccion" />
+    </Key>
+    <Property Name="idTipoDeTransaccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Transaccion">
+    <Key>
+      <PropertyRef Name="idTransaccion" />
+    </Key>
+    <Property Name="idTransaccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="monto" Type="int" Nullable="false" />
+    <Property Name="idMetodoDePago" Type="int" Nullable="false" />
+    <Property Name="idProducto" Type="int" />
+    <Property Name="idServicio" Type="int" />
+    <Property Name="idEmpleado" Type="int" Nullable="false" />
+    <Property Name="idTipoDeTransaccion" Type="int" Nullable="false" />
+    <Property Name="numeroReferencia" Type="varchar" MaxLength="50" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Turno">
+    <Key>
+      <PropertyRef Name="idTurno" />
+    </Key>
+    <Property Name="idTurno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="clave" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Zona">
+    <Key>
+      <PropertyRef Name="idZona" />
+    </Key>
+    <Property Name="idZona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Tienda.dbo.Antiguedad Empleados' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Antiguedad Empleados">
+    <Key>
+      <PropertyRef Name="Nombre Completo" />
+    </Key>
+    <Property Name="Nombre Completo" Type="varchar" MaxLength="152" Nullable="false" />
+    <Property Name="Años de Servicio" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Tienda.dbo.Ingreso Empleados' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Ingreso Empleados">
+    <Key>
+      <PropertyRef Name="Nombre Completo" />
+    </Key>
+    <Property Name="Nombre Completo" Type="varchar" MaxLength="152" Nullable="false" />
+    <Property Name="Año de ingreso" Type="int" />
+    <Property Name="Mes de ingreso" Type="int" />
+    <Property Name="Dia de ingreso" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Tienda.dbo.Productos con precio encima del promedio' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Productos con precio encima del promedio">
+    <Key>
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="precio" />
+    </Key>
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="precio" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Tienda.dbo.Productos mas barato' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Productos mas barato">
+    <Key>
+      <PropertyRef Name="Nombre del producto" />
+      <PropertyRef Name="Precio" />
+      <PropertyRef Name="idProveedor" />
+    </Key>
+    <Property Name="Nombre del producto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Precio" Type="int" Nullable="false" />
+    <Property Name="idProveedor" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Tienda.dbo.Productos mas caro' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Productos mas caro">
+    <Key>
+      <PropertyRef Name="Nombre del producto" />
+      <PropertyRef Name="Precio" />
+      <PropertyRef Name="idProveedor" />
+    </Key>
+    <Property Name="Nombre del producto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Precio" Type="int" Nullable="false" />
+    <Property Name="idProveedor" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FKAsentamientoMunicipio">
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />
+    <End Role="Asentamiento" Type="Self.Asentamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipio">
+        <PropertyRef Name="idMunicipio" />
+      </Principal>
+      <Dependent Role="Asentamiento">
+        <PropertyRef Name="idMunicipio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKAsentamientoTipoDeAsentamiento">
+    <End Role="TipoDeAsentamiento" Type="Self.TipoDeAsentamiento" Multiplicity="1" />
+    <End Role="Asentamiento" Type="Self.Asentamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDeAsentamiento">
+        <PropertyRef Name="idTipoDeAsentamiento" />
+      </Principal>
+      <Dependent Role="Asentamiento">
+        <PropertyRef Name="idTipoDeAsentamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKAsentamientoUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Asentamiento" Type="Self.Asentamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Asentamiento">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKAsentamientoUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Asentamiento" Type="Self.Asentamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Asentamiento">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKAsentamientoZona">
+    <End Role="Zona" Type="Self.Zona" Multiplicity="0..1" />
+    <End Role="Asentamiento" Type="Self.Asentamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zona">
+        <PropertyRef Name="idZona" />
+      </Principal>
+      <Dependent Role="Asentamiento">
+        <PropertyRef Name="idZona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKContratoEmpleado">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Contrato" Type="Self.Contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="idEmpleado" />
+      </Principal>
+      <Dependent Role="Contrato">
+        <PropertyRef Name="idEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKContratoUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Contrato" Type="Self.Contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Contrato">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKContratoUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Contrato" Type="Self.Contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Contrato">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEmpleadoAsentamiento">
+    <End Role="Asentamiento" Type="Self.Asentamiento" Multiplicity="0..1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Asentamiento">
+        <PropertyRef Name="idAsentamiento" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idAsentamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEmpleadoEstadoCivil">
+    <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoCivil">
+        <PropertyRef Name="idEstadoCivil" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idEstadoCivil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEmpleadoEstudios">
+    <End Role="Estudios" Type="Self.Estudios" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estudios">
+        <PropertyRef Name="idEstudios" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idEstudios" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEmpleadoNacionalidad">
+    <End Role="Nacionalidad" Type="Self.Nacionalidad" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nacionalidad">
+        <PropertyRef Name="idNacionalidad" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idNacionalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEmpleadoPuesto">
+    <End Role="Puesto" Type="Self.Puesto" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Puesto">
+        <PropertyRef Name="idPuesto" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idPuesto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEmpleadoTurnoEmpleado">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="EmpleadoTurno" Type="Self.EmpleadoTurno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="idEmpleado" />
+      </Principal>
+      <Dependent Role="EmpleadoTurno">
+        <PropertyRef Name="idEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEmpleadoTurnoTurno">
+    <End Role="Turno" Type="Self.Turno" Multiplicity="1" />
+    <End Role="EmpleadoTurno" Type="Self.EmpleadoTurno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Turno">
+        <PropertyRef Name="idTurno" />
+      </Principal>
+      <Dependent Role="EmpleadoTurno">
+        <PropertyRef Name="idTurno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEmpleadoTurnoUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="EmpleadoTurno" Type="Self.EmpleadoTurno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="EmpleadoTurno">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEmpleadoTurnoUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="EmpleadoTurno" Type="Self.EmpleadoTurno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="EmpleadoTurno">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEmpleadoUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEmpleadoUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEstadoCivilUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="EstadoCivil">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEstadoCivilUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="EstadoCivil">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEstadoUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Estado" Type="Self.Estado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Estado">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEstadoUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Estado" Type="Self.Estado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Estado">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEstanteUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Estante" Type="Self.Estante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Estante">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEstanteUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Estante" Type="Self.Estante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Estante">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEstudiosUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Estudios" Type="Self.Estudios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Estudios">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEstudiosUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Estudios" Type="Self.Estudios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Estudios">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEtiquetaUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Etiqueta" Type="Self.Etiqueta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Etiqueta">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEtiquetaUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Etiqueta" Type="Self.Etiqueta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Etiqueta">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKMarcaUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Marca" Type="Self.Marca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Marca">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKMarcaUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Marca" Type="Self.Marca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Marca">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKMetodoDePagoUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="MetodoDePago" Type="Self.MetodoDePago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="MetodoDePago">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKMetodoDePagoUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="MetodoDePago" Type="Self.MetodoDePago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="MetodoDePago">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKMunicipioEstado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="idEstado" />
+      </Principal>
+      <Dependent Role="Municipio">
+        <PropertyRef Name="idEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKMunicipioUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Municipio">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKMunicipioUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Municipio">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKNacionalidadUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Nacionalidad" Type="Self.Nacionalidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Nacionalidad">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKNacionalidadUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Nacionalidad" Type="Self.Nacionalidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Nacionalidad">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKProductoEstante">
+    <End Role="Estante" Type="Self.Estante" Multiplicity="1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estante">
+        <PropertyRef Name="idEstante" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="idEstante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKProductoEtiquetaEtiqueta">
+    <End Role="Etiqueta" Type="Self.Etiqueta" Multiplicity="1" />
+    <End Role="ProductoEtiqueta" Type="Self.ProductoEtiqueta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Etiqueta">
+        <PropertyRef Name="idEtiqueta" />
+      </Principal>
+      <Dependent Role="ProductoEtiqueta">
+        <PropertyRef Name="idEtiqueta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKProductoEtiquetaProducto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="ProductoEtiqueta" Type="Self.ProductoEtiqueta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="idProducto" />
+      </Principal>
+      <Dependent Role="ProductoEtiqueta">
+        <PropertyRef Name="idProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKProductoEtiquetaUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="ProductoEtiqueta" Type="Self.ProductoEtiqueta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="ProductoEtiqueta">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKProductoEtiquetaUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="ProductoEtiqueta" Type="Self.ProductoEtiqueta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="ProductoEtiqueta">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKProductoMarca">
+    <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="idMarca" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="idMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKProductoProveedor">
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="idProveedor" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="idProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKProductoTipoDeProducto">
+    <End Role="TipoDeProducto" Type="Self.TipoDeProducto" Multiplicity="1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDeProducto">
+        <PropertyRef Name="idTipoDeProducto" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="idTipoDeProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKProductoUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKProductoUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKProveedorTipoDeProveedor">
+    <End Role="TipoDeProveedor" Type="Self.TipoDeProveedor" Multiplicity="1" />
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDeProveedor">
+        <PropertyRef Name="idTipoDeProveedor" />
+      </Principal>
+      <Dependent Role="Proveedor">
+        <PropertyRef Name="idTipoDeProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKProveedorUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Proveedor">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKProveedorUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Proveedor">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKPuestoUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Puesto" Type="Self.Puesto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Puesto">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKPuestoUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Puesto" Type="Self.Puesto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Puesto">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKReferenciaUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Referencia" Type="Self.Referencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Referencia">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKReferenciaUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Referencia" Type="Self.Referencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Referencia">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKServicioReferencia">
+    <End Role="Referencia" Type="Self.Referencia" Multiplicity="1" />
+    <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Referencia">
+        <PropertyRef Name="idReferencia" />
+      </Principal>
+      <Dependent Role="Servicio">
+        <PropertyRef Name="idReferencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKServicioUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Servicio">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTipoDeAsentamientoUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="TipoDeAsentamiento" Type="Self.TipoDeAsentamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="TipoDeAsentamiento">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTipoDeAsentamientoUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="TipoDeAsentamiento" Type="Self.TipoDeAsentamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="TipoDeAsentamiento">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTipoDeProductoUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="TipoDeProducto" Type="Self.TipoDeProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="TipoDeProducto">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTipoDeProductoUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="TipoDeProducto" Type="Self.TipoDeProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="TipoDeProducto">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTipoDeProveedorUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="TipoDeProveedor" Type="Self.TipoDeProveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="TipoDeProveedor">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTipoDeProveedorUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="TipoDeProveedor" Type="Self.TipoDeProveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="TipoDeProveedor">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTipoDeTransaccionUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="TipoDeTransaccion" Type="Self.TipoDeTransaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="TipoDeTransaccion">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTipoDeTransaccionUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="TipoDeTransaccion" Type="Self.TipoDeTransaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="TipoDeTransaccion">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTransaccionEmpleado">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Transaccion" Type="Self.Transaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="idEmpleado" />
+      </Principal>
+      <Dependent Role="Transaccion">
+        <PropertyRef Name="idEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTransaccionMetodoDePago">
+    <End Role="MetodoDePago" Type="Self.MetodoDePago" Multiplicity="1" />
+    <End Role="Transaccion" Type="Self.Transaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetodoDePago">
+        <PropertyRef Name="idMetodoDePago" />
+      </Principal>
+      <Dependent Role="Transaccion">
+        <PropertyRef Name="idMetodoDePago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTransaccionProducto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
+    <End Role="Transaccion" Type="Self.Transaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="idProducto" />
+      </Principal>
+      <Dependent Role="Transaccion">
+        <PropertyRef Name="idProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTransaccionServicio">
+    <End Role="Servicio" Type="Self.Servicio" Multiplicity="0..1" />
+    <End Role="Transaccion" Type="Self.Transaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servicio">
+        <PropertyRef Name="idServicio" />
+      </Principal>
+      <Dependent Role="Transaccion">
+        <PropertyRef Name="idServicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTransaccionTipoDeTransaccion">
+    <End Role="TipoDeTransaccion" Type="Self.TipoDeTransaccion" Multiplicity="1" />
+    <End Role="Transaccion" Type="Self.Transaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDeTransaccion">
+        <PropertyRef Name="idTipoDeTransaccion" />
+      </Principal>
+      <Dependent Role="Transaccion">
+        <PropertyRef Name="idTipoDeTransaccion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTransaccionUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Transaccion" Type="Self.Transaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Transaccion">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTransaccionUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Transaccion" Type="Self.Transaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Transaccion">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTurnoUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Turno" Type="Self.Turno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Turno">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTurnoUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Turno" Type="Self.Turno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Turno">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKUsuarioUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Usuario1" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Usuario1">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKUsuarioUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Usuario1" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Usuario1">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKZonaUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Zona" Type="Self.Zona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Zona">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKZonaUsuarioModifica">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Zona" Type="Self.Zona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Zona">
+        <PropertyRef Name="idUsuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ServicioUsuarioCrea">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Servicio">
+        <PropertyRef Name="idUsuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Encriptar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="contraseña" Type="varchar" Mode="In" />
+    <Parameter Name="Resultado" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="Random" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Resultado" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sm_BuscarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nom" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sm_DisminuirPrecioProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Decremento" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sm_DisminuirPrecioProductoPorMarca" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idMarc" Type="int" Mode="In" />
+    <Parameter Name="Decremento" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sm_GananciasTotalesProductos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sm_GananciasTotalesServicios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sm_GananciasTotalesTransacciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sm_IncrementarPrecioProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Incremento" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sm_IncrementarPrecioProductoPorMarca" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idMarc" Type="int" Mode="In" />
+    <Parameter Name="incremento" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sm_InformacionEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idEmp" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sm_IngresarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idProd" Type="int" Mode="In" />
+    <Parameter Name="Cant" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sm_NumeroDeServiciosAntesDe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sm_NumeroDeServiciosDespuesDe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sm_NumeroDeTransaccionesAntesDe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sm_NumeroDeTransaccionesDespuessDe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sm_NumeroDeVentasAntesDe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sm_NumeroDeVentasDespuesDe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sm_RealizarTransaccionServicio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="monto" Type="int" Mode="In" />
+    <Parameter Name="idMetodo" Type="int" Mode="In" />
+    <Parameter Name="idServicio" Type="int" Mode="In" />
+    <Parameter Name="idEmp" Type="int" Mode="In" />
+    <Parameter Name="numeroRef" Type="varchar" Mode="In" />
+    <Parameter Name="idUsuar" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sm_RealizarTransaccionVenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="monto" Type="int" Mode="In" />
+    <Parameter Name="idMetodo" Type="int" Mode="In" />
+    <Parameter Name="idProd" Type="int" Mode="In" />
+    <Parameter Name="idEmp" Type="int" Mode="In" />
+    <Parameter Name="idUsuar" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sm_RetirarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idProd" Type="int" Mode="In" />
+    <Parameter Name="Cant" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sm_ServiciosAntesDe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sm_ServiciosDespuesDe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sm_TotalReembolsos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sm_TransaccionesAntesDe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sm_TransaccionesDespuesDe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sm_VentasAntesDe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sm_VentasDespuesDe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="TiendaModelStoreContainer">
+    <EntitySet Name="Asentamiento" EntityType="Self.Asentamiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contrato" EntityType="Self.Contrato" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmpleadoTurno" EntityType="Self.EmpleadoTurno" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EstadoCivil" EntityType="Self.EstadoCivil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estante" EntityType="Self.Estante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estudios" EntityType="Self.Estudios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Etiqueta" EntityType="Self.Etiqueta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marca" EntityType="Self.Marca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetodoDePago" EntityType="Self.MetodoDePago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Municipio" EntityType="Self.Municipio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nacionalidad" EntityType="Self.Nacionalidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductoEtiqueta" EntityType="Self.ProductoEtiqueta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Puesto" EntityType="Self.Puesto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Referencia" EntityType="Self.Referencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Servicio" EntityType="Self.Servicio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoDeAsentamiento" EntityType="Self.TipoDeAsentamiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoDeProducto" EntityType="Self.TipoDeProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoDeProveedor" EntityType="Self.TipoDeProveedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoDeTransaccion" EntityType="Self.TipoDeTransaccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transaccion" EntityType="Self.Transaccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Turno" EntityType="Self.Turno" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zona" EntityType="Self.Zona" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Antiguedad Empleados" EntityType="Self.Antiguedad Empleados" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Antiguedad Empleados].[Nombre Completo] AS [Nombre Completo], 
+    [Antiguedad Empleados].[Años de Servicio] AS [Años de Servicio]
+    FROM [dbo].[Antiguedad Empleados] AS [Antiguedad Empleados]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Ingreso Empleados" EntityType="Self.Ingreso Empleados" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Ingreso Empleados].[Nombre Completo] AS [Nombre Completo], 
+    [Ingreso Empleados].[Año de ingreso] AS [Año de ingreso], 
+    [Ingreso Empleados].[Mes de ingreso] AS [Mes de ingreso], 
+    [Ingreso Empleados].[Dia de ingreso] AS [Dia de ingreso]
+    FROM [dbo].[Ingreso Empleados] AS [Ingreso Empleados]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Productos con precio encima del promedio" EntityType="Self.Productos con precio encima del promedio" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Productos con precio encima del promedio].[nombre] AS [nombre], 
+    [Productos con precio encima del promedio].[precio] AS [precio]
+    FROM [dbo].[Productos con precio encima del promedio] AS [Productos con precio encima del promedio]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Productos mas barato" EntityType="Self.Productos mas barato" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Productos mas barato].[Nombre del producto] AS [Nombre del producto], 
+    [Productos mas barato].[Precio] AS [Precio], 
+    [Productos mas barato].[idProveedor] AS [idProveedor]
+    FROM [dbo].[Productos mas barato] AS [Productos mas barato]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Productos mas caro" EntityType="Self.Productos mas caro" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Productos mas caro].[Nombre del producto] AS [Nombre del producto], 
+    [Productos mas caro].[Precio] AS [Precio], 
+    [Productos mas caro].[idProveedor] AS [idProveedor]
+    FROM [dbo].[Productos mas caro] AS [Productos mas caro]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FKAsentamientoMunicipio" Association="Self.FKAsentamientoMunicipio">
+      <End Role="Municipio" EntitySet="Municipio" />
+      <End Role="Asentamiento" EntitySet="Asentamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FKAsentamientoTipoDeAsentamiento" Association="Self.FKAsentamientoTipoDeAsentamiento">
+      <End Role="TipoDeAsentamiento" EntitySet="TipoDeAsentamiento" />
+      <End Role="Asentamiento" EntitySet="Asentamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FKAsentamientoUsuarioCrea" Association="Self.FKAsentamientoUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Asentamiento" EntitySet="Asentamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FKAsentamientoUsuarioModifica" Association="Self.FKAsentamientoUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Asentamiento" EntitySet="Asentamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FKAsentamientoZona" Association="Self.FKAsentamientoZona">
+      <End Role="Zona" EntitySet="Zona" />
+      <End Role="Asentamiento" EntitySet="Asentamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FKContratoEmpleado" Association="Self.FKContratoEmpleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Contrato" EntitySet="Contrato" />
+    </AssociationSet>
+    <AssociationSet Name="FKContratoUsuarioCrea" Association="Self.FKContratoUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Contrato" EntitySet="Contrato" />
+    </AssociationSet>
+    <AssociationSet Name="FKContratoUsuarioModifica" Association="Self.FKContratoUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Contrato" EntitySet="Contrato" />
+    </AssociationSet>
+    <AssociationSet Name="FKEmpleadoAsentamiento" Association="Self.FKEmpleadoAsentamiento">
+      <End Role="Asentamiento" EntitySet="Asentamiento" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FKEmpleadoEstadoCivil" Association="Self.FKEmpleadoEstadoCivil">
+      <End Role="EstadoCivil" EntitySet="EstadoCivil" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FKEmpleadoEstudios" Association="Self.FKEmpleadoEstudios">
+      <End Role="Estudios" EntitySet="Estudios" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FKEmpleadoNacionalidad" Association="Self.FKEmpleadoNacionalidad">
+      <End Role="Nacionalidad" EntitySet="Nacionalidad" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FKEmpleadoPuesto" Association="Self.FKEmpleadoPuesto">
+      <End Role="Puesto" EntitySet="Puesto" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FKEmpleadoTurnoEmpleado" Association="Self.FKEmpleadoTurnoEmpleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="EmpleadoTurno" EntitySet="EmpleadoTurno" />
+    </AssociationSet>
+    <AssociationSet Name="FKEmpleadoTurnoTurno" Association="Self.FKEmpleadoTurnoTurno">
+      <End Role="Turno" EntitySet="Turno" />
+      <End Role="EmpleadoTurno" EntitySet="EmpleadoTurno" />
+    </AssociationSet>
+    <AssociationSet Name="FKEmpleadoTurnoUsuarioCrea" Association="Self.FKEmpleadoTurnoUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="EmpleadoTurno" EntitySet="EmpleadoTurno" />
+    </AssociationSet>
+    <AssociationSet Name="FKEmpleadoTurnoUsuarioModifica" Association="Self.FKEmpleadoTurnoUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="EmpleadoTurno" EntitySet="EmpleadoTurno" />
+    </AssociationSet>
+    <AssociationSet Name="FKEmpleadoUsuarioCrea" Association="Self.FKEmpleadoUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FKEmpleadoUsuarioModifica" Association="Self.FKEmpleadoUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FKEstadoCivilUsuarioCrea" Association="Self.FKEstadoCivilUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="EstadoCivil" EntitySet="EstadoCivil" />
+    </AssociationSet>
+    <AssociationSet Name="FKEstadoCivilUsuarioModifica" Association="Self.FKEstadoCivilUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="EstadoCivil" EntitySet="EstadoCivil" />
+    </AssociationSet>
+    <AssociationSet Name="FKEstadoUsuarioCrea" Association="Self.FKEstadoUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Estado" EntitySet="Estado" />
+    </AssociationSet>
+    <AssociationSet Name="FKEstadoUsuarioModifica" Association="Self.FKEstadoUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Estado" EntitySet="Estado" />
+    </AssociationSet>
+    <AssociationSet Name="FKEstanteUsuarioCrea" Association="Self.FKEstanteUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Estante" EntitySet="Estante" />
+    </AssociationSet>
+    <AssociationSet Name="FKEstanteUsuarioModifica" Association="Self.FKEstanteUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Estante" EntitySet="Estante" />
+    </AssociationSet>
+    <AssociationSet Name="FKEstudiosUsuarioCrea" Association="Self.FKEstudiosUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Estudios" EntitySet="Estudios" />
+    </AssociationSet>
+    <AssociationSet Name="FKEstudiosUsuarioModifica" Association="Self.FKEstudiosUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Estudios" EntitySet="Estudios" />
+    </AssociationSet>
+    <AssociationSet Name="FKEtiquetaUsuarioCrea" Association="Self.FKEtiquetaUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Etiqueta" EntitySet="Etiqueta" />
+    </AssociationSet>
+    <AssociationSet Name="FKEtiquetaUsuarioModifica" Association="Self.FKEtiquetaUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Etiqueta" EntitySet="Etiqueta" />
+    </AssociationSet>
+    <AssociationSet Name="FKMarcaUsuarioCrea" Association="Self.FKMarcaUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Marca" EntitySet="Marca" />
+    </AssociationSet>
+    <AssociationSet Name="FKMarcaUsuarioModifica" Association="Self.FKMarcaUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Marca" EntitySet="Marca" />
+    </AssociationSet>
+    <AssociationSet Name="FKMetodoDePagoUsuarioCrea" Association="Self.FKMetodoDePagoUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="MetodoDePago" EntitySet="MetodoDePago" />
+    </AssociationSet>
+    <AssociationSet Name="FKMetodoDePagoUsuarioModifica" Association="Self.FKMetodoDePagoUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="MetodoDePago" EntitySet="MetodoDePago" />
+    </AssociationSet>
+    <AssociationSet Name="FKMunicipioEstado" Association="Self.FKMunicipioEstado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Municipio" EntitySet="Municipio" />
+    </AssociationSet>
+    <AssociationSet Name="FKMunicipioUsuarioCrea" Association="Self.FKMunicipioUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Municipio" EntitySet="Municipio" />
+    </AssociationSet>
+    <AssociationSet Name="FKMunicipioUsuarioModifica" Association="Self.FKMunicipioUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Municipio" EntitySet="Municipio" />
+    </AssociationSet>
+    <AssociationSet Name="FKNacionalidadUsuarioCrea" Association="Self.FKNacionalidadUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Nacionalidad" EntitySet="Nacionalidad" />
+    </AssociationSet>
+    <AssociationSet Name="FKNacionalidadUsuarioModifica" Association="Self.FKNacionalidadUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Nacionalidad" EntitySet="Nacionalidad" />
+    </AssociationSet>
+    <AssociationSet Name="FKProductoEstante" Association="Self.FKProductoEstante">
+      <End Role="Estante" EntitySet="Estante" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FKProductoEtiquetaEtiqueta" Association="Self.FKProductoEtiquetaEtiqueta">
+      <End Role="Etiqueta" EntitySet="Etiqueta" />
+      <End Role="ProductoEtiqueta" EntitySet="ProductoEtiqueta" />
+    </AssociationSet>
+    <AssociationSet Name="FKProductoEtiquetaProducto" Association="Self.FKProductoEtiquetaProducto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="ProductoEtiqueta" EntitySet="ProductoEtiqueta" />
+    </AssociationSet>
+    <AssociationSet Name="FKProductoEtiquetaUsuarioCrea" Association="Self.FKProductoEtiquetaUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ProductoEtiqueta" EntitySet="ProductoEtiqueta" />
+    </AssociationSet>
+    <AssociationSet Name="FKProductoEtiquetaUsuarioModifica" Association="Self.FKProductoEtiquetaUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ProductoEtiqueta" EntitySet="ProductoEtiqueta" />
+    </AssociationSet>
+    <AssociationSet Name="FKProductoMarca" Association="Self.FKProductoMarca">
+      <End Role="Marca" EntitySet="Marca" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FKProductoProveedor" Association="Self.FKProductoProveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FKProductoTipoDeProducto" Association="Self.FKProductoTipoDeProducto">
+      <End Role="TipoDeProducto" EntitySet="TipoDeProducto" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FKProductoUsuarioCrea" Association="Self.FKProductoUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FKProductoUsuarioModifica" Association="Self.FKProductoUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FKProveedorTipoDeProveedor" Association="Self.FKProveedorTipoDeProveedor">
+      <End Role="TipoDeProveedor" EntitySet="TipoDeProveedor" />
+      <End Role="Proveedor" EntitySet="Proveedor" />
+    </AssociationSet>
+    <AssociationSet Name="FKProveedorUsuarioCrea" Association="Self.FKProveedorUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Proveedor" EntitySet="Proveedor" />
+    </AssociationSet>
+    <AssociationSet Name="FKProveedorUsuarioModifica" Association="Self.FKProveedorUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Proveedor" EntitySet="Proveedor" />
+    </AssociationSet>
+    <AssociationSet Name="FKPuestoUsuarioCrea" Association="Self.FKPuestoUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Puesto" EntitySet="Puesto" />
+    </AssociationSet>
+    <AssociationSet Name="FKPuestoUsuarioModifica" Association="Self.FKPuestoUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Puesto" EntitySet="Puesto" />
+    </AssociationSet>
+    <AssociationSet Name="FKReferenciaUsuarioCrea" Association="Self.FKReferenciaUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Referencia" EntitySet="Referencia" />
+    </AssociationSet>
+    <AssociationSet Name="FKReferenciaUsuarioModifica" Association="Self.FKReferenciaUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Referencia" EntitySet="Referencia" />
+    </AssociationSet>
+    <AssociationSet Name="FKServicioReferencia" Association="Self.FKServicioReferencia">
+      <End Role="Referencia" EntitySet="Referencia" />
+      <End Role="Servicio" EntitySet="Servicio" />
+    </AssociationSet>
+    <AssociationSet Name="FKServicioUsuarioModifica" Association="Self.FKServicioUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Servicio" EntitySet="Servicio" />
+    </AssociationSet>
+    <AssociationSet Name="FKTipoDeAsentamientoUsuarioCrea" Association="Self.FKTipoDeAsentamientoUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="TipoDeAsentamiento" EntitySet="TipoDeAsentamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FKTipoDeAsentamientoUsuarioModifica" Association="Self.FKTipoDeAsentamientoUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="TipoDeAsentamiento" EntitySet="TipoDeAsentamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FKTipoDeProductoUsuarioCrea" Association="Self.FKTipoDeProductoUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="TipoDeProducto" EntitySet="TipoDeProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FKTipoDeProductoUsuarioModifica" Association="Self.FKTipoDeProductoUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="TipoDeProducto" EntitySet="TipoDeProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FKTipoDeProveedorUsuarioCrea" Association="Self.FKTipoDeProveedorUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="TipoDeProveedor" EntitySet="TipoDeProveedor" />
+    </AssociationSet>
+    <AssociationSet Name="FKTipoDeProveedorUsuarioModifica" Association="Self.FKTipoDeProveedorUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="TipoDeProveedor" EntitySet="TipoDeProveedor" />
+    </AssociationSet>
+    <AssociationSet Name="FKTipoDeTransaccionUsuarioCrea" Association="Self.FKTipoDeTransaccionUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="TipoDeTransaccion" EntitySet="TipoDeTransaccion" />
+    </AssociationSet>
+    <AssociationSet Name="FKTipoDeTransaccionUsuarioModifica" Association="Self.FKTipoDeTransaccionUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="TipoDeTransaccion" EntitySet="TipoDeTransaccion" />
+    </AssociationSet>
+    <AssociationSet Name="FKTransaccionEmpleado" Association="Self.FKTransaccionEmpleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Transaccion" EntitySet="Transaccion" />
+    </AssociationSet>
+    <AssociationSet Name="FKTransaccionMetodoDePago" Association="Self.FKTransaccionMetodoDePago">
+      <End Role="MetodoDePago" EntitySet="MetodoDePago" />
+      <End Role="Transaccion" EntitySet="Transaccion" />
+    </AssociationSet>
+    <AssociationSet Name="FKTransaccionProducto" Association="Self.FKTransaccionProducto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Transaccion" EntitySet="Transaccion" />
+    </AssociationSet>
+    <AssociationSet Name="FKTransaccionServicio" Association="Self.FKTransaccionServicio">
+      <End Role="Servicio" EntitySet="Servicio" />
+      <End Role="Transaccion" EntitySet="Transaccion" />
+    </AssociationSet>
+    <AssociationSet Name="FKTransaccionTipoDeTransaccion" Association="Self.FKTransaccionTipoDeTransaccion">
+      <End Role="TipoDeTransaccion" EntitySet="TipoDeTransaccion" />
+      <End Role="Transaccion" EntitySet="Transaccion" />
+    </AssociationSet>
+    <AssociationSet Name="FKTransaccionUsuarioCrea" Association="Self.FKTransaccionUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Transaccion" EntitySet="Transaccion" />
+    </AssociationSet>
+    <AssociationSet Name="FKTransaccionUsuarioModifica" Association="Self.FKTransaccionUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Transaccion" EntitySet="Transaccion" />
+    </AssociationSet>
+    <AssociationSet Name="FKTurnoUsuarioCrea" Association="Self.FKTurnoUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Turno" EntitySet="Turno" />
+    </AssociationSet>
+    <AssociationSet Name="FKTurnoUsuarioModifica" Association="Self.FKTurnoUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Turno" EntitySet="Turno" />
+    </AssociationSet>
+    <AssociationSet Name="FKUsuarioUsuarioCrea" Association="Self.FKUsuarioUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Usuario1" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FKUsuarioUsuarioModifica" Association="Self.FKUsuarioUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Usuario1" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FKZonaUsuarioCrea" Association="Self.FKZonaUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Zona" EntitySet="Zona" />
+    </AssociationSet>
+    <AssociationSet Name="FKZonaUsuarioModifica" Association="Self.FKZonaUsuarioModifica">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Zona" EntitySet="Zona" />
+    </AssociationSet>
+    <AssociationSet Name="ServicioUsuarioCrea" Association="Self.ServicioUsuarioCrea">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Servicio" EntitySet="Servicio" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,138 @@
+﻿@model Proyecto_Final.Models.Empleado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.apellidoPaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellidoPaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellidoMaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellidoMaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RFC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RFC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaCrea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaCrea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaModifica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaModifica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Asentamiento.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asentamiento.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoCivil.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoCivil.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estudios.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estudios.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nacionalidad.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nacionalidad.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Puesto.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Puesto.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.nombreUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario1.nombreUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario1.nombreUsuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idEmpleado }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
